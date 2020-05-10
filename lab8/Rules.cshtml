@@ -1,0 +1,26 @@
+﻿@{ 
+    var rules = new List<string>();
+    if (Session["rules"] != null)
+    {
+        rules = (List<String>)Session["rules"];
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="Bridge.cshtml" method="post">
+        Reguła:<input type="text" name="rule"><br />
+        <input type="submit">
+    </form>
+
+    @{
+        foreach (var i in rules)
+        {
+            <li>@i</li>
+            }
+        }
+</body>
+</html>
